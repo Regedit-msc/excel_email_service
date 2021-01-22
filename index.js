@@ -40,6 +40,11 @@ app.post('/mail', cors(), (req, res) => {
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style type="text/css">
+
+        .message {
+            background-color: white;
+            padding: 30px
+        }
           #outlook a{padding: 0;}
                       .ReadMsgBody{width: 100%;}
                       .ExternalClass{width: 100%;}
@@ -194,11 +199,12 @@ app.post('/mail', cors(), (req, res) => {
                     <!--[if mso | IE]>
     <table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td style="vertical-align:top;width:600px;">
     <![endif]-->
-                    <div class='dys-column-per-100 outlook-group-fix' style='direction:ltr;display:inline-block;font-size:13px;text-align:left;vertical-align:top;width:100%;'>
+                    <div class='dys-column-per-100  message   outlook-group-fix' style='direction:ltr;display:inline-block;font-size:13px;text-align:left;vertical-align:top;width:100%;'>
                       <table border='0' cellpadding='0' cellspacing='0' role='presentation' style='vertical-align:top;' width='100%'>
                         <tr>
                           <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
                             <div style='color:#999999;font-family:Open Sans, Arial, sans-serif;font-size:15px;line-height:22px;text-align:center;'>
+                            Message Content:<br>
                               ${req.body.message}
                             </div>
                           </td>
