@@ -43,7 +43,8 @@ app.post('/mail', cors(), (req, res) => {
   `;
     ///-------------------------------
 
-
+    console.log(process.env.USERNAME);
+    console.log(process.env.PASSWORD);
     ///-------------------------------
     var transporter = nodemailer.createTransport({
         service: 'gmail',
