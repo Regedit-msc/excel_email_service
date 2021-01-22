@@ -164,7 +164,7 @@ app.post('/mail', cors(), (req, res) => {
                         <tr>
                           <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
                             <div style='color:#30373b;font-family:Open Sans, Arial, sans-serif;font-size:15px;font-weight:bold;line-height:18px;text-align:center;'>
-                               You have a new mail from  ${req.body.mame} whose email is ${req.body.email}.
+                               You have a new mail from  ${req.body.name} whose email is ${req.body.email}.
                               <br>
                               This message is from the excel tutors website.
                             </div>
