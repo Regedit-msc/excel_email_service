@@ -305,7 +305,6 @@ app.post('/mail', cors(), (req, res) => {
 </tbody>
 </table>
 <div align="center" class="img-container center autowidth">
-<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="" align="center"><![endif]--><img align="center" border="0" class="center autowidth" src="https://media4.giphy.com/media/L0xEMBwhaMGVaWk4rk/giphy.gif?cid=20eb4e9drxw91acozgyxcjdlsaj1dej92j0qvi1618mddxwc&amp;rid=giphy.gif" style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 100%; max-width: 370px; display: block;" width="370"/>
 <!--[if mso]></td></tr></table><![endif]-->
 </div>
 <!--[if (!mso)&(!IE)]><!-->
@@ -497,7 +496,21 @@ app.post('/mail/apply', cors(), (req, res) => {
 // 	}
 
 
-	const { name, email, address, phone, gender, hostelreservation, sponsorname, dateofbirth, select, stateoforigin, sponsorsnumber } = req.body
+	const {
+
+		name,
+		email,
+		address,
+		phone,
+		gender,
+		hostelreservation,
+		sponsorname,
+		dateofbirth,
+		select,
+		stateoforigin,
+		sponsorsnumber
+
+	} = req.body
 
 
 
@@ -511,7 +524,7 @@ app.post('/mail/apply', cors(), (req, res) => {
 	
 	</style>
 	</head>
-	<body style="margin:100px">
+	<body>
 	
 	<h2> APPLICATION DETAILS OF ${name} </h2>
 	<hr/>
@@ -602,6 +615,7 @@ app.post('/mail/apply', cors(), (req, res) => {
 	  </tr>
 	 
 	</table>
+	<p> This service is provided by <a href="ayfolio.netlify.app">Efusanya Ayomide</a>. </p>
 	</div>
 	
 	</body>
