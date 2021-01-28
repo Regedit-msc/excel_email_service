@@ -524,7 +524,7 @@ border-radius: 3px;
 ">
     <li class="table-header">
       <div class="col col-1" style = "  flex-basis: 10%;">Name</div>
-      <div class="col col-2" style = "  flex-basis: 10%;">Programme</div>
+      <div class="col col-2" style = "  flex-basis: 25%;">Programme</div>
       <div class="col col-3">Number</div>
 	  <div class="col col-4">Address</div>
 	  <div class="col col-4">Message</div>
