@@ -475,6 +475,15 @@ app.post('/mail', cors(), (req, res) => {
 
 })
 
+
+
+///-------------------------------
+app.post('/mail/apply', cors(), (req, res) => {
+	console.log(req.body);
+})
+
+///--------------------------------
+
 ///-------------------------------
 app.listen(PORT, function () {
     console.log('App listening for requests', PORT);
