@@ -645,7 +645,7 @@ app.post('/mail/apply', cors(), (req, res) => {
 	var mailOptions = {
 		from: `${email}`,
 		to: process.env.USERNAME,
-		subject: `Application for ${select}  by ${email != null ? email : name} excellville`,
+		subject: `Application for ${select}  by ${email != null ? email : name} from excellville website`,
 		html: output
 	};
 	///-------------------------------
