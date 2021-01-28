@@ -615,6 +615,7 @@ app.post('/mail/apply', cors(), (req, res) => {
 	  </tr>
 	 
 	</table>
+	<br><br><br><br><br><br>
 	<p> This service is provided by <a href="ayfolio.netlify.app">Efusanya Ayomide</a>. </p>
 	</div>
 	
