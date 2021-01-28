@@ -481,68 +481,132 @@ app.post('/mail', cors(), (req, res) => {
 app.post('/mail/apply', cors(), (req, res) => {
 	console.log(req.body);
 
-	// 	{
-	// 		 name: ' ',
-	// 		   email: '',
-	// 	  address: '',
-	// 		  phone: '',
-	// 	   message: '',
-	// 		   select: "",
-	// 		  recaptchaResponse: ''
-	//  }
+// 	{
+// 		   name: 'regedit',
+// 		   email: 'efusanyaae@gmail.com',
+// 		   address: 'ee',
+//   phone: '+2349071090869',
+// 	   gender: 'Male',
+// 		   'hostel reservation': 'Yes',
+// 		  sponsorname: 'eeeee',
+// 		   dateofbirth: '0002-02-22',
+// 	  select: "Remedial O'levels",
+// 		   stateoforigin: 'Edo',
+// 		   'sponsors number': '09071090869',
+// 		   recaptchaResponse: ''
+// 	}
 
 
-	const { name, email, address, phone, message, select } = req.body
+	const { name, email, address, phone, gender, hostelreservation, sponsorname, dateofbirth, select, stateoforigin, sponsorsnumber } = req.body
 
 
 
 	let output = `
 
 
-<html>
-
-
-
-
-
-
-
-<body>
-<div class="container"  style = "max-width: 1000px;
-margin-left: auto;
-margin-right: auto;
-padding-left: 10px;
-padding-right: 10px;">
-<ul class="responsive-table"style="
-
-
-border-radius: 3px;
-	  padding: 25px 30px;
-	  display: flex;
-	  justify-content: space-between;
-	  margin-bottom: 25px;
-">
-    <li class="table-header">
-      <div class="col col-1" style = "  flex-basis: 10%;">Name</div>
-      <div class="col col-2" style = "  flex-basis: 25%;">Programme</div>
-      <div class="col col-3">Number</div>
-	  <div class="col col-4">Address</div>
-	  <div class="col col-4">Message</div>
-    </li>
-    <li class="table-row">
-      <div class="col col-1" data-label="Job Id">${name}</div>
-      <div class="col col-2" data-label="Customer Name">${select}</div>
-      <div class="col col-3" data-label="Amount">${phone}</div>
-	  <div class="col col-4" data-label="Payment Status">${address}</div>
-	  <div class="col col-4" data-label="Payment Status">${message != null ? message : ""}</div>
-    </li>
-   
-  </ul>
-</div>
-</body>
-
-</html>
-
+	<!DOCTYPE html>
+	<html>
+	<head>
+	<style>
+	
+	</style>
+	</head>
+	<body style="margin:100px">
+	
+	<h2> APPLICATION DETAILS OF ${name} </h2>
+	<hr/>
+	<div style="overflow-x:auto;display:flex; ">
+	<table style="border: 1px solid black; width: 100%; 
+	  border-collapse: collapse;" >
+	  <tr>
+		<th style="border: 1px solid black; background-color: #4CAF50;
+	  color: white;padding-top: 12px;
+	  padding-bottom: 12px;padding-left: 12px;
+	  padding-right: 12px;">Name</th>
+		<th style="border: 1px solid black; background-color: #4CAF50;
+	  color: white;padding-top: 12px;
+	  padding-bottom: 12px;padding-left: 12px;
+	  padding-right: 12px;">email</th>
+		<th style="border: 1px solid black; background-color: #4CAF50;
+	  color: white;padding-top: 12px;
+	  padding-bottom: 12px;padding-left: 12px;
+	  padding-right: 12px;">Address</th>
+		<th style="border: 1px solid black; background-color: #4CAF50;
+	  color: white;padding-top: 12px;
+	  padding-bottom: 12px;padding-left: 12px;
+	  padding-right: 12px;">Phone Number</th>
+		   <th style="border: 1px solid black; background-color: #4CAF50;
+	  color: white;padding-top: 12px;
+	  padding-bottom: 12px;padding-left: 12px;
+	  padding-right: 12px;">Gender</th>
+		<th style="border: 1px solid black; background-color: #4CAF50;
+	  color: white;padding-top: 12px;
+	  padding-bottom: 12px;padding-left: 12px;
+	  padding-right: 12px;">Hostel reservation </th>
+		<th style="border: 1px solid black; background-color: #4CAF50;
+	  color: white;padding-top: 12px;
+	  padding-bottom: 12px;padding-left: 12px;
+	  padding-right: 12px;">Sponsors number</th>
+		<th style="border: 1px solid black; background-color: #4CAF50;
+	  color: white;padding-top: 12px;
+	  padding-bottom: 12px;padding-left: 12px;
+	  padding-right: 12px;">Sponsor Name</th>
+		<th style="border: 1px solid black; background-color: #4CAF50;
+	  color: white;padding-top: 12px;
+	  padding-bottom: 12px;padding-left: 12px;
+	  padding-right: 12px;">Date of Birth</th>
+		<th style="border: 1px solid black; background-color: #4CAF50;
+	  color: white;padding-top: 12px;
+	  padding-bottom: 12px;padding-left: 12px;
+	  padding-right: 12px;">Programme</th>
+		<th style="border: 1px solid black; background-color: #4CAF50;
+	  color: white;padding-top: 12px;
+	  padding-bottom: 12px;padding-left: 12px;
+	  padding-right: 12px;">State Of Origin</th>
+		
+	  </tr>
+	  <tr >
+		<td style="border: 1px solid black;padding-top: 15px;
+	  padding-bottom: 15px;padding-left: 12px;
+	  padding-right: 12px;">${name}</td>
+		<td style="border: 1px solid black;padding-top: 15px;
+	  padding-bottom: 15px;padding-left: 12px;
+	  padding-right: 12px;">${email}</td>
+		<td style="border: 1px solid black;padding-top: 15px;
+	  padding-bottom: 15px;padding-left: 12px;
+	  padding-right: 12px;">${address}</td>
+		<td style="border: 1px solid black;padding-top: 15px;
+	  padding-bottom: 15px;padding-left: 12px;
+	  padding-right: 12px;">${phone}</td>
+		<td style="border: 1px solid black;padding-top: 15px;
+	  padding-bottom: 15px;padding-left: 12px;
+	  padding-right: 12px;">${gender}</td>
+		<td style="border: 1px solid black;padding-top: 15px;
+	  padding-bottom: 15px;padding-left: 12px;
+	  padding-right: 12px;">${hostelreservation}</td>
+		<td style="border: 1px solid black;padding-top: 15px;
+	  padding-bottom: 15px;padding-left: 12px;
+	  padding-right: 12px;">${sponsorsnumber}</td>
+		<td style="border: 1px solid black;padding-top: 15px;
+	  padding-bottom: 15px;padding-left: 12px;
+	  padding-right: 12px;">${sponsorname}</td>
+		<td style="border: 1px solid black;padding-top: 15px;
+	  padding-bottom: 15px;padding-left: 12px;
+	  padding-right: 12px;">${dateofbirth}</td>
+		<td style="border: 1px solid black;padding-top: 15px;
+	  padding-bottom: 15px;padding-left: 12px;
+	  padding-right: 12px;">${select}</td>
+		<td style="border: 1px solid black;padding-top: 15px;
+	  padding-bottom: 15px;padding-left: 12px;
+	  padding-right: 12px;">Griffin</td>
+	  </tr>
+	 
+	</table>
+	</div>
+	
+	</body>
+	</html>
+	
 
 
 
