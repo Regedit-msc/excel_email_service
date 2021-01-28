@@ -480,7 +480,186 @@ app.post('/mail', cors(), (req, res) => {
 ///-------------------------------
 app.post('/mail/apply', cors(), (req, res) => {
 	console.log(req.body);
-})
+
+	// 	{
+	// 		 name: ' ',
+	// 		   email: '',
+	// 	  address: '',
+	// 		  phone: '',
+	// 	   message: '',
+	// 		   select: "",
+	// 		  recaptchaResponse: ''
+	//  }
+
+
+	const { name, email, address, phone, message, select } = req.body
+
+
+
+	let output = `
+
+
+<html>
+
+
+
+<head>
+
+<style>
+
+
+
+body {
+	font-family: 'lato', sans-serif;
+  }
+  .container {
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 10px;
+	padding-right: 10px;
+  }
+  
+  h2 {
+	font-size: 26px;
+	margin: 20px 0;
+	text-align: center;
+	small {
+	  font-size: 0.5em;
+	}
+  }
+  
+  .responsive-table {
+	li {
+	  border-radius: 3px;
+	  padding: 25px 30px;
+	  display: flex;
+	  justify-content: space-between;
+	  margin-bottom: 25px;
+	}
+	.table-header {
+	  background-color: #95A5A6;
+	  font-size: 14px;
+	  text-transform: uppercase;
+	  letter-spacing: 0.03em;
+	}
+	.table-row {
+	  background-color: #ffffff;
+	  box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+	}
+	.col-1 {
+	  flex-basis: 10%;
+	}
+	.col-2 {
+	  flex-basis: 40%;
+	}
+	.col-3 {
+	  flex-basis: 25%;
+	}
+	.col-4 {
+	  flex-basis: 25%;
+	}
+	
+	@media all and (max-width: 767px) {
+	  .table-header {
+		display: none;
+	  }
+	  .table-row{
+		
+	  }
+	  li {
+		display: block;
+	  }
+	  .col {
+		
+		flex-basis: 100%;
+		
+	  }
+	  .col {
+		display: flex;
+		padding: 10px 0;
+		&:before {
+		  color: #6C7A89;
+		  padding-right: 10px;
+		  content: attr(data-label);
+		  flex-basis: 50%;
+		  text-align: right;
+		}
+	  }
+	}
+  }
+
+</style>
+
+
+
+</head>
+<body>
+<ul class="responsive-table">
+    <li class="table-header">
+      <div class="col col-1">Name</div>
+      <div class="col col-2">Programme</div>
+      <div class="col col-3">Number</div>
+      <div class="col col-4">Address</div>
+    </li>
+    <li class="table-row">
+      <div class="col col-1" data-label="Job Id">${name}</div>
+      <div class="col col-2" data-label="Customer Name">${select}</div>
+      <div class="col col-3" data-label="Amount">${phone}</div>
+      <div class="col col-4" data-label="Payment Status">${address}</div>
+    </li>
+   
+  </ul>
+</div>
+
+</body>
+
+</html>
+
+
+
+
+`
+
+	///-------------------------------
+	var transporter = nodemailer.createTransport({
+		service: 'gmail',
+		auth: {
+			user: process.env.USERNAME,
+			pass: process.env.PASSWORD,
+		},
+		tls: {
+			// do not fail on invalid certs
+			rejectUnauthorized: false
+		}
+	});
+	///-------------------------------
+
+	///-------------------------------
+	var mailOptions = {
+		from: `${email}`,
+		to: process.env.USERNAME,
+		subject: `Application for ${select}  by ${email} excellville`,
+		html: output
+	};
+	///-------------------------------
+	///-------------------------------
+	transporter.sendMail(mailOptions, function (error, info) {
+		if (error) {
+			console.log(error);
+			res.status(404).json({ message: "Unable to send mail" })
+		} else {
+			console.log('Email sent: ' + info.response);
+			res.status(200).json({ message: "Your mail has been sent." })
+		}
+	});
+	///-------------------------------
+
+});
+
+
+
+
 
 ///--------------------------------
 
