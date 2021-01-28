@@ -482,17 +482,17 @@ app.post('/mail/apply', cors(), (req, res) => {
 	console.log(req.body);
 
 // 	{
-// 		   name: 'regedit',
-// 		   email: 'efusanyaae@gmail.com',
-// 		   address: 'ee',
-//   phone: '+2349071090869',
-// 	   gender: 'Male',
-// 		   'hostel reservation': 'Yes',
-// 		  sponsorname: 'eeeee',
-// 		   dateofbirth: '0002-02-22',
-// 	  select: "Remedial O'levels",
-// 		   stateoforigin: 'Edo',
-// 		   'sponsors number': '09071090869',
+// 		   name: '',
+// 		   email: '',
+// 		   address: '',
+//   phone: '',
+// 	   gender: '',
+// 		   'hostel reservation': '',
+// 		  sponsorname: '',
+// 		   dateofbirth: '',
+// 	  select: "",
+// 		   stateoforigin: '',
+// 		   'sponsors number': '',
 // 		   recaptchaResponse: ''
 // 	}
 
@@ -598,7 +598,7 @@ app.post('/mail/apply', cors(), (req, res) => {
 	  padding-right: 12px;">${select}</td>
 		<td style="border: 1px solid black;padding-top: 15px;
 	  padding-bottom: 15px;padding-left: 12px;
-	  padding-right: 12px;">Griffin</td>
+	  padding-right: 12px;">${stateoforigin}</td>
 	  </tr>
 	 
 	</table>
